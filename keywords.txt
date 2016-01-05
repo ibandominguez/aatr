@@ -1,0 +1,6 @@
+AATR         KEYWORD1
+read         KEYWORD2
+getTmp       KEYWORD2
+toKelvin     KEYWORD2
+toCelcius    KEYWORD2
+toFahrenheit KEYWORD2
