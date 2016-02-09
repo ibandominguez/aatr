@@ -18,7 +18,7 @@
  * @return void
  */
 AATR::AATR(int pin) {
-  this->pin = pin;
+  pin = pin;
 }
 
 /**
@@ -27,7 +27,7 @@ AATR::AATR(int pin) {
  * @return ATTR *
  */
 AATR *AATR::read() {
-  this->readValue = analogRead(this->pin);
+  readValue = analogRead(pin);
 
   return this;
 }
@@ -39,9 +39,9 @@ AATR *AATR::read() {
  * @return float
  */
 double AATR::getTmp(char format) {
-  if (format == 'K' || format == 'k') return this->toKelvin(this->readValue);
-  else if (format == 'F' || format == 'f') return this->toFahrenheit(this->readValue);
-  else return this->toCelcius(this->readValue);
+  if (format == 'K' || format == 'k') return toKelvin(readValue);
+  else if (format == 'F' || format == 'f') return toFahrenheit(readValue);
+  else return toCelcius(readValue);
 }
 
 /**
@@ -66,7 +66,7 @@ double AATR::toKelvin(int value) {
  */
 double AATR::toCelcius(int value) {
   double temp;
-  temp = this->toKelvin(value);
+  temp = toKelvin(value);
   temp = temp - 273.15;
 
   return temp;
@@ -80,7 +80,7 @@ double AATR::toCelcius(int value) {
  */
 double AATR::toFahrenheit(int value) {
   double temp;
-  temp = this->toCelcius(value);
+  temp = toCelcius(value);
   temp = (temp * 9.0)/ 5.0 + 32.0;
 
   return temp;
